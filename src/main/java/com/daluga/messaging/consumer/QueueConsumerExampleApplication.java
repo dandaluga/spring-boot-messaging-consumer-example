@@ -24,9 +24,6 @@ public class QueueConsumerExampleApplication implements CommandLineRunner {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(QueueConsumerExampleApplication.class);
 
-//    @Autowired
-//    private Producer producer;
-
     @Value("${queue.name}")
     private String queueName;
 
@@ -45,9 +42,7 @@ public class QueueConsumerExampleApplication implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         LOGGER.debug("Spring Boot messaging producer example  has started....");
-        LOGGER.debug("Queue name: " + queueName);
-//        producer.send("I put a message to the queue....");
+        LOGGER.debug("Listening on queue name: " + queueName);
         LOGGER.debug("Spring Boot messaging producer example has ended....");
-
     }
 }
